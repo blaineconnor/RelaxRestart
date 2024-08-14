@@ -50,6 +50,7 @@ struct HomeView: View {
             
             Button(action: {
                 withAnimation {
+                    playSound(sound: "success", type: "m4a")
                     isOnboardingViewActive = true
                 }
             }) {
@@ -72,6 +73,8 @@ struct HomeView: View {
             })
         })
         .animation(.easeOut(duration: 0.5), value: isAnimating)
+        .preferredColorScheme(.light)
+        .ignoresSafeArea(.all, edges: .all)
         
     }
 }
